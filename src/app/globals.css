@@ -1,26 +1,134 @@
 @import "tailwindcss";
+/*@config "./tailwind.config.ts"*/
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Base colors */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11.2%;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11.2%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11.2%;
+
+    /* Primary colors - Vibrant indigo with increased saturation */
+    --primary: 250 95% 64%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary colors - Soft lavender */
+    --secondary: 260 30% 94%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    /* Muted colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent colors - Vibrant purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input colors */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 250 95% 64%;
+
+    /* Trending specific colors - More vibrant */
+    --trending-positive: 142 76% 36%;
+    --trending-negative: 346 84% 61%;
+
+    /* Insight colors - Vibrant teal */
+    --insight: 180 100% 37%;
+    --insight-foreground: 210 40% 98%;
+
+    /* Like/Dislike colors - More vibrant */
+    --like: 142 76% 36%;
+    --like-foreground: 210 40% 98%;
+    --dislike: 262 83% 58%;
+    --dislike-foreground: 210 40% 98%;
+
+    /* Gradient variables - Enhanced with more vibrant colors */
+    --gradient-subtle: rgba(149, 97, 226, 0.1), rgba(149, 97, 226, 0.05), rgba(149, 97, 226, 0);
+    --gradient-accent: rgba(149, 97, 226, 0.3), rgba(124, 58, 237, 0.2), rgba(79, 70, 229, 0.1);
+    --gradient-like: rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1);
+    --gradient-dislike: rgba(149, 97, 226, 0.3), rgba(149, 97, 226, 0.2), rgba(149, 97, 226, 0.1);
+
+    /* Border radius - Slightly increased for a more modern look */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Base colors */
+    --background: 222 47% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Card colors */
+    --card: 222 47% 6.9%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover colors */
+    --popover: 222 47% 6.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary colors - Vibrant indigo with increased saturation */
+    --primary: 250 95% 64%;
+    --primary-foreground: 222 47% 4.9%;
+
+    /* Secondary colors - Darker lavender */
+    --secondary: 260 30% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted colors */
+    --muted: 217.2 32.6% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent colors - Vibrant purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive colors */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input colors */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 250 95% 64%;
+
+    /* Trending specific colors - More vibrant */
+    --trending-positive: 142 76% 45%;
+    --trending-negative: 346 84% 61%;
+
+    /* Insight colors - Vibrant teal */
+    --insight: 180 100% 45%;
+    --insight-foreground: 222 47% 4.9%;
+
+    /* Like/Dislike colors - More vibrant */
+    --like: 142 76% 45%;
+    --like-foreground: 222 47% 4.9%;
+    --dislike: 262 83% 58%;
+    --dislike-foreground: 222 47% 4.9%;
+
+    /* Gradient variables - Enhanced with more vibrant colors */
+    --gradient-subtle: rgba(149, 97, 226, 0.15), rgba(149, 97, 226, 0.08), rgba(149, 97, 226, 0);
+    --gradient-accent: rgba(149, 97, 226, 0.4), rgba(124, 58, 237, 0.3), rgba(79, 70, 229, 0.2);
+    --gradient-like: rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.2);
+    --gradient-dislike: rgba(149, 97, 226, 0.4), rgba(149, 97, 226, 0.3), rgba(149, 97, 226, 0.2);
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
 }
